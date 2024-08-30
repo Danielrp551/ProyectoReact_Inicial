@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Cripto from "./cripto/Cripto"
 
-function App() {
+import "./Cuadricula.css"
+
+function Cuadricula() {
 
   const API_URL = `${import.meta.env.VITE_API_URL}assets`
 
@@ -22,17 +25,17 @@ function App() {
   if(!criptos)  return <span>Cargando . . .</span>
 
   return (
-    <>
+    <div className="app-container">
       <h1>Lista de criptomonedas</h1>
-      <ol>
+      <div className="cripto-container">
         { 
-          criptos.map( ({id,priceUsd}) => (
-            <li key={id}>Nombre : {id} Precio: {priceUsd} $</li>
+          criptos.map( (cripto) => (
+              <Cripto key={cripto.id} {...cripto}/>
           )) 
         }
-      </ol>
-    </>
+      </div>
+    </div>
   )
 }
 
-export default App
+export default Cuadricula
