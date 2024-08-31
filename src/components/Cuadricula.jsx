@@ -3,29 +3,18 @@ import axios from "axios"
 import Cripto from "./cripto/Cripto"
 
 import "./Cuadricula.css"
+import usePetition from "../hooks/usePetition"
 
 function Cuadricula() {
 
-  const API_URL = `${import.meta.env.VITE_API_URL}assets`
-
-  const [criptos, setCriptos] = useState()
-
-  useEffect(() => {
-    axios.get(API_URL)
-      .then((data) => {
-        console.log(data)
-        setCriptos(data.data.data)
-      })
-      .catch(() => {
-        console.log(API_URL)
-        console.error("La petición a fallado")
-      })
-  }, [])
-
-  if(!criptos)  return <span>Cargando . . .</span>
+  const [criptos,loadingCripto, error] = usePetition("assets")
+  
+  if(error) return <span>Ocurrió un error en la petición.</span>
+  if(loadingCripto)  return <span>Cargando . . .</span>
+  
 
   return (
-    <div className="app-container">
+    <div className="grid-container">
       <h1>Lista de criptomonedas</h1>
       <div className="cripto-container">
         { 

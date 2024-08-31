@@ -5,19 +5,18 @@ const Cripto = ({ id, name, priceUsd, explorer, rank, changePercent24Hr,symbol }
 
     return (
         <div className="cripto">
-            <h2>{name}</h2>
-            <div className='info'>
-                <p><span className='label'>Precio: </span>{parseFloat(priceUsd).toFixed(4)} $</p>
-                <p><span className='label'>Código: </span>{symbol}</p>
-                <p>
-                    <span className='label'>Variación 24HR: </span>
-                    <span className={changePercent24Hr > 0 ? "activada" : "desactivada"}>
-                        {parseFloat(changePercent24Hr).toFixed(3) } %
-                    </span>
-                </p>
-                <Link to={'/criptomonedas/' + id}>Ver detalles</Link>
-            </div>
+        <Link to={`/criptomonedas/${id}`}><h2>{name}</h2></Link>  
+        <div className="info">
+          <p><span className="label">Precio: </span>{parseFloat(priceUsd).toFixed(4)}</p>
+          <p><span className="label">Código: </span>{symbol}</p>
+          <p>
+            <span className="label">Variación 24hrs: </span>
+            <span className={ parseFloat(changePercent24Hr) > 0 ? "positivo" : "negativo" }>
+              {parseFloat(changePercent24Hr).toFixed(3)}%
+            </span>
+          </p>
         </div>
+      </div>
     )
 }
 

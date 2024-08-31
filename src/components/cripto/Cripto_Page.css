@@ -1,162 +1,70 @@
-body {
-    background-color: #f7fafc;
-    color: #1a202c;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.cripto-page-container {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 2rem;
+    position: relative;
+    color: white;
   }
   
-  .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    align-items: center;
+  .cripto-page-container .info {
+    position: fixed;
   }
   
-  .header {
-    text-align: center;
+  .cripto-page-container .history {
+    grid-column-start: 2;
+  }
+  
+  .cripto-page-container .main-info {
     margin-bottom: 2rem;
+    color : white;
   }
   
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
+  .cripto-page-container .symbol {
+    color: rgba(255, 255, 255, 0.5);
   }
   
-  .icon {
-    margin-right: 0.5rem;
-    width: 48px;
-    height: 48px;
-    fill: #f59e0b;
+  .cripto-page-container .details {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    color : white;
   }
   
-  .subtitle {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
-    color: #bcd7ff;
-  }
-  
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .grid.grid-double {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    width: 40%;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .cripto-page-container .detail {
     margin-bottom: 1rem;
   }
   
-  .card-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #4a5568;
-  }
-  
-  .card-icon {
-    width: 16px;
-    height: 16px;
-    fill: #a0aec0;
-  }
-  
-  .card-content {
-    color: #1a202c;
-  }
-  
-  .card-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .card-change {
-    font-size: 0.875rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .card-change.positive {
-    color: #48bb78;
-  }
-  
-  .card-change.negative {
-    color: #f56565;
-  }
-  
-  .arrow-icon {
-    margin-right: 0.25rem;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .card-subtext {
-    font-size: 0.875rem;
-    color: #718096;
-  }
-
-  .supply-card{
-    width: 90%;
-    max-width: 1200px;
-  }
-  
-  .supply-card .progress-bar {
-    background-color: #edf2f7;
-    border-radius: 0.25rem;
-    overflow: hidden;
-    height: 8px;
-  }
-  
-  .supply-card .progress {
-    height: 100%;
-    background-color: #3182ce;
-  }
-  
-  .supply-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-    color: #718096;
-  }
-  
-  .info-list {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
-  }
-  
-  .info-title {
-    font-size: 0.875rem;
-    color: #718096;
-  }
-  
-  .info-value {
-    font-size: 1.125rem;
+  .cripto-page-container h1 {
     font-weight: 600;
-    color: #1a202c;
-    margin :0;
+    font-size: 3rem;
+    margin-bottom: .2rem;
   }
   
-  .supply-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  td, th {
+    padding: 1rem;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  thead tr {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.34);
+  }
+  
+  tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+  }
+  
+  .history .price {
+    color: #4FFF60;
   }
